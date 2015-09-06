@@ -10,7 +10,7 @@ public class ServerMain {
 	public static String line = 	"---------------------------------";
 	public static String nameMsg = 	"     Java ChatServer " + Version + "      ";
 	public static String welcomeMsg = "Welcome to Java ChatServer!";
-	public static int defaultPort = 8000;
+	public static int defaultPort = 15000;
 	
 	@SuppressWarnings("resource")
 	public static void main(String[] args)throws IOException {
@@ -56,7 +56,6 @@ public class ServerMain {
 		while(true){
 			User nU = new User(Listener.accept(), System.out, ++n, userList);
 			userList.add(nU);
-			System.out.println("New user connected!");
 		}
 		//Listener.close();
 	}

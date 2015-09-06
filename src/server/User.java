@@ -13,7 +13,7 @@ public class User implements Runnable {
 	private ArrayList <User> userList = null;
 	private String msg = "";
 	private int num = 0;
-	public String nick = "";
+	public String nick = null;
 	private Socket userSocket = null;
 	private Thread trd = null;
 		
@@ -29,10 +29,10 @@ public class User implements Runnable {
 		);
 		this.userOut = userSocket.getOutputStream();
 		
-		sayToUser("Welcome!");
 		sayToUser("Enter your nickname:");
-		this.nick = userIn.readLine();
-		//TODO Move to ServerMain
+		nick = userIn.readLine();
+		sayToUser("Welcome!");
+		
 		trd = new Thread(this, "user "+num+" thread");
 		trd.start();
 	}
@@ -72,6 +72,7 @@ public class User implements Runnable {
 	@Override
 	public void run()
 	{
+		sayToServer("User #" + num + ", nick: \"" + nick + "\" " + " connected. ");
 		try {
 			if (listen()==0){
 				sayToServer("User #" + num + " disconnected.");
@@ -79,7 +80,7 @@ public class User implements Runnable {
 			};
 			
 		} catch (IOException e) {
-			sayToServer("ERROR! I/O Exception. ");
+			sayToServer("User #" + num + ", nick: \"" + nick + "\" " + " disconnected. ");
 		}
 	}
 }
