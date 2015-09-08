@@ -12,3 +12,4 @@ public class CommandThread implements Runnable {
 	}
 
 }
+	

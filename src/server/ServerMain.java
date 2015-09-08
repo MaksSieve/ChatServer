@@ -12,6 +12,10 @@ public class ServerMain {
 	public static String welcomeMsg = "Welcome to Java ChatServer!";
 	public static int defaultPort = 15000;
 	
+	public void ext(int n){
+		System.exit(n);
+	}
+	
 	@SuppressWarnings("resource")
 	public static void main(String[] args)throws IOException {
 		
