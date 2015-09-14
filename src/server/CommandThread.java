@@ -1,9 +1,11 @@
 package server;
 
 public class CommandThread implements Runnable {
-
+	
+	private ServerMain server;
+	
 	public CommandThread() {
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	@Override
