@@ -12,7 +12,7 @@ public enum Commands {
 	}
 	
 	public void Action(){
-		if (this.com.equals("/exit")) server.ext(0);
+		if (this.com.equals("/exit")) server.exit(0);
 		if (this.com.equals("/usrlst"));
 	}	
 	
